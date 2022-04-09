@@ -16,7 +16,7 @@ function getGeoCoordinates() {
     console.log(userInput);
 
     // var cityName = localStorage.getItem("userInput");
-    var requestUrl = 'http://api.openweathermap.org/geo/1.0/direct?q=' + userInput + '&limit=1&appid=50508f792fb6351a821be7b026bc4041';
+    var requestUrl = 'http://api.openweathermap.org/geo/1.0/direct?q=' + userInput + '&limit=1&appid=847bed9dfc4d0e0da832e4cfefa1ef06';
     // clear user input from input element
     searchInput.value = null;
     fetch(requestUrl)
@@ -49,7 +49,7 @@ function getWeather() {
     var lat = localStorage.getItem("lat");
     var lon = localStorage.getItem("lon");
     // concatenate lat and lon into the requestUrl to obtain the weather data for that location
-    var requestUrl = 'https://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&appid=50508f792fb6351a821be7b026bc4041';
+    var requestUrl = 'https://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&appid=847bed9dfc4d0e0da832e4cfefa1ef06';
     fetch(requestUrl)
         .then(function (response) {
             return response.json();
@@ -75,5 +75,19 @@ function getWeather() {
             });
 };
 
+getForecast();
 
-
+function getForecast() {
+    // receive lat and lon inputs as strings
+    var lat = localStorage.getItem("lat");
+    var lon = localStorage.getItem("lon");
+    // concatenate lat and lon into the requestUrl to obtain the weather data for that location
+    var requestUrl = 'https://pro.openweathermap.org/data/2.5/forecast/hourly?lat=' + lat + '&lon=' + lon + '&appid=847bed9dfc4d0e0da832e4cfefa1ef06';
+    fetch(requestUrl)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+                console.log(data);
+        });
+};

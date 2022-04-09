@@ -9,21 +9,78 @@
     rel="stylesheet"
     href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
     />
+    <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Document</title>
+    <title>Weather Dashboard</title>
 </head>
 <body>
-    
-    <article id="currentDayContainer">
-        <div id="icon"><img id="weathericon" src="" alt="Weather icon"></div>
-        <form>
-            <label for="citySearch">Search for a city:</label>
-            <input id="searchInput">
+
+    <header>
+        <h1 id="main-header">
+            Weather Dashboard
+        </h1>
+    </header>
+
+    <div id="searchWrapper">
+    <section id="searchSection">
+        <form id="searchForm">
+            <label for="citySearch" id="searchLabel">Search for a city:</label>
+            <div>
+            <input name="citySearch" id="searchInput" placeholder="Search for a city">
             <button type="button" class="btn btn-outline-dark" id="searchBtn">Search</button>
-        </form>
-    </article>
+            </div>
+        </form>    
+    </section>
+        <div id="contentWrapper">
+
+        <div id="currentDayHeader">
+            <h3 id="cityName">City Name</h3>
+            <h4 id="todaysDate">(1/11/1111)</h4>
+            <div id="icon"><img id="weathericon" src="" alt="Weather icon"></div>
+        </div>
+        
+        <h4 class="dataLabel">Temperature:</h4>
+        <h4 class="dataLabel">Humidity:</h4>
+        <h4 class="dataLabel">Windspeed:</h4>
+        <h4 class="dataLabel">UV index:</h4>
+
+        <article id="forecastContainer">
+            <h3 id="forecastHeader">5-Day Forecast</h3>
+            <div id="cardContainer">
+            <div class="forecastCard">
+                <h4 id="forecastDate">1/11/1111</h4>
+                <h5 id="cardData" >Temperature:</h5>
+                <h5 id="cardData" >Humidity:</h5>
+            </div>
+            <div class="forecastCard">
+                <h4 id="forecastDate">1/11/1111</h4>
+                <h5 id="cardData" >Temperature:</h5>
+                <h5 id="cardData" >Humidity:</h5>
+            </div>
+            <div class="forecastCard">
+                <h4 id="forecastDate">1/11/1111</h4>
+                <h5 id="cardData" >Temperature:</h5>
+                <h5 id="cardData" >Humidity:</h5>
+            </div>
+            <div class="forecastCard">
+                <h4 id="forecastDate">1/11/1111</h4>
+                <h5 id="cardData" >Temperature:</h5>
+                <h5 id="cardData" >Humidity:</h5>
+            </div>
+            <div class="forecastCard">
+                <h4 id="forecastDate">1/11/1111</h4>
+                <h5 id="cardData">Temperature:</h5>
+                <h5 id="cardData">Humidity:</h5>
+            </div>
+        </div>
+        </article>
+        </div>
+    </div>
+
+
+
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
 </html>
