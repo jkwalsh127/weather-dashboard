@@ -34,15 +34,15 @@
         <div id="contentWrapper">
 
         <div id="currentDayHeader">
-            <h3 id="cityName">City Name</h3>
+            <h3 id="cityNameHeader">City Name</h3>
             <h4 id="todaysDate">(1/11/1111)</h4>
             <div id="icon"><img id="weathericon" src="" alt="Weather icon"></div>
         </div>
         
-        <h4 class="dataLabel">Temperature:</h4>
-        <h4 class="dataLabel">Humidity:</h4>
-        <h4 class="dataLabel">Windspeed:</h4>
-        <h4 class="dataLabel">UV index:</h4>
+        <h4 class="dataLabel" id="temp">Temperature: <p class="data" id="currentTemp"></p></h4>
+        <h4 class="dataLabel" id="humidity">Humidity: <p class="data" id="currentHumidity"></p></h4>
+        <h4 class="dataLabel" id="windspeed">Windspeed: <p class="data" id="currentWindspeed"></p></h4>
+        <h4 class="dataLabel" id="uv">UV Index: <p class="data" id="currentUV"></p></h4>
 
         <article id="forecastContainer">
             <h3 id="forecastHeader">5-Day Forecast</h3>
@@ -81,6 +81,7 @@
 
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="./assets/js/config.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
 </html>
