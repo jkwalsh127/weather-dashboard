@@ -1,3 +1,6 @@
+var config = {
+    OPEN_WEATHER_KEY : '1097f0fbe89a0cce275a74f432222784',
+  }
 var key = config.OPEN_WEATHER_KEY;
 
 var currentDayContainter = document.getElementById('currentDayHeader');
