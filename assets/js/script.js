@@ -96,7 +96,7 @@ function getWeather() {
                 // console.log(data);
                 // set variable to carry the 'icon' key value representative of the weather logo
                 var iconKey = data.weather[0].icon;
-                var iconUrl = "http://openweathermap.org/img/w/" + iconKey + ".png";
+                var iconUrl = "https://openweathermap.org/img/w/" + iconKey + ".png";
                 // assign url as source to img element
                 $('#weathericon').attr('src', iconUrl);
 
@@ -140,19 +140,19 @@ function getForecast() {
                 forecastHumidityArray[i].text('Humidity: ' + humidity);
             }
             var iconKey1 = data.daily[1].weather[0].icon;
-            var iconUrl1 = "http://openweathermap.org/img/w/" + iconKey1 + ".png";
+            var iconUrl1 = "https://openweathermap.org/img/w/" + iconKey1 + ".png";
             $('#weatherIcon1').attr('src', iconUrl1);
             var iconKey2 = data.daily[2].weather[0].icon;
-            var iconUrl2 = "http://openweathermap.org/img/w/" + iconKey2+ ".png";
+            var iconUrl2 = "https://openweathermap.org/img/w/" + iconKey2+ ".png";
             $('#weatherIcon2').attr('src', iconUrl2);
             var iconKey3 = data.daily[3].weather[0].icon;
-            var iconUrl3 = "http://openweathermap.org/img/w/" + iconKey3 + ".png";
+            var iconUrl3 = "https://openweathermap.org/img/w/" + iconKey3 + ".png";
             $('#weatherIcon3').attr('src', iconUrl3);
             var iconKey4 = data.daily[4].weather[0].icon;
-            var iconUrl4 = "http://openweathermap.org/img/w/" + iconKey4 + ".png";
+            var iconUrl4 = "https://openweathermap.org/img/w/" + iconKey4 + ".png";
             $('#weatherIcon4').attr('src', iconUrl4);
             var iconKey5 = data.daily[5].weather[0].icon;
-            var iconUrl5 = "http://openweathermap.org/img/w/" + iconKey5 + ".png";
+            var iconUrl5 = "https://openweathermap.org/img/w/" + iconKey5 + ".png";
             $('#weatherIcon5').attr('src', iconUrl5);
 
             uvIndex = data.current.uvi;
@@ -218,7 +218,7 @@ searchForm.addEventListener("submit", function(event) {
     // console.log(userInput);
 
     // var cityName = localStorage.getItem("userInput");
-    var requestUrl = 'http://api.openweathermap.org/geo/1.0/direct?q=' + userInput + '&limit=1&appid=' + key;
+    var requestUrl = 'https://api.openweathermap.org/geo/1.0/direct?q=' + userInput + '&limit=1&appid=' + key;
     // clear user input from input element
     searchInput.value = null;
     fetch(requestUrl)
@@ -253,7 +253,7 @@ cityList.addEventListener("click", function(event) {
         // Get data on city name of the saved city in order to send a new data request
         var dataCity = element.getAttribute("data-city");
         console.log(dataCity);
-        var requestUrl = 'http://api.openweathermap.org/geo/1.0/direct?q=' + dataCity + '&limit=1&appid=' + key;
+        var requestUrl = 'https://api.openweathermap.org/geo/1.0/direct?q=' + dataCity + '&limit=1&appid=' + key;
         fetch(requestUrl)
             .then(function (response) {
                 return response.json();
