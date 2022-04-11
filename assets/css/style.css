@@ -114,11 +114,30 @@ header {
 
 .dataLabel {
     font-size: 16px;
-    margin: 40px 0 0 10px;
+    margin: 30px 0 0 10px;
 }
 
 .data {
     display: inline-block;
+}
+
+#uvColorCode {
+    width: 80px;
+    height: 40px;
+    margin: 0 0 0 10px;
+    padding: 5px;
+}
+
+.uvColorCodeLow {
+    background-color: green;
+}
+
+.uvColorCodeMod {
+    background-color: yellow;
+}
+
+.uvColorCodeHigh {
+    background-color: red;
 }
 
 /*  */

@@ -31,54 +31,59 @@
             </div>
         </form>    
     </section>
-        <div id="contentWrapper">
+    <div id="contentWrapper">
 
         <div id="currentDayHeader">
             <h3 id="cityNameHeader">City Name</h3>
-            <h4 id="todaysDate">(1/11/1111)</h4>
-            <div id="icon"><img id="weathericon" src="" alt="Weather icon"></div>
+            <h4 id="todaysDate"></h4>
+            <div id="icon"><img id="weathericon" src="http://openweathermap.org/img/w/01d.png" alt="Weather icon"></div>
         </div>
         
-        <h4 class="dataLabel" id="temp">Temperature: <p class="data" id="currentTemp"></p></h4>
-        <h4 class="dataLabel" id="humidity">Humidity: <p class="data" id="currentHumidity"></p></h4>
-        <h4 class="dataLabel" id="windspeed">Windspeed: <p class="data" id="currentWindspeed"></p></h4>
-        <h4 class="dataLabel" id="uv">UV Index: <p class="data" id="currentUV"></p></h4>
+        <h4 class="dataLabel">Temperature: <p class="data" id="currentTemp"></p></h4>
+        <h4 class="dataLabel">Humidity: <p class="data" id="currentHumidity"></p></h4>
+        <h4 class="dataLabel">Windspeed: <p class="data" id="currentWindspeed"></p></h4>
+        <div id="uvColorCode" class="">
+            <h4 class="uvLabel">UV Index: <p class="data" id="currentUV"></p></h4>
+        </div>
 
         <article id="forecastContainer">
             <h3 id="forecastHeader">5-Day Forecast</h3>
             <div id="cardContainer">
-            <div class="forecastCard">
-                <h4 id="forecastDate">1/11/1111</h4>
-                <h5 id="cardData" >Temperature:</h5>
-                <h5 id="cardData" >Humidity:</h5>
+                <div class="forecastCard1" id="forecastCard1">
+                    <h4 id="forecastDate1"></h4>
+                    <div class="icon" id="forecastIcon1"><img class="weatherIcon" id="weatherIcon1" src="http://openweathermap.org/img/w/01d.png" alt="Weather icon"></div>
+                    <h5 class="dataLabel" id="forecastTemp1">Temperature: <p class="data" id="forecastTemp"></p> </h5>
+                    <h5 class="dataLabel" id="forecastHumidity1">Humidity: <p class="data" id="forecastHumidity"></p></h5>
+                </div>
+                <div class="forecastCard2" id="forecastCard2">
+                    <h4 id="forecastDate2"></h4>
+                    <div class="icon" id="forecastIcon2"><img class="weatherIcon" id="weatherIcon2" src="http://openweathermap.org/img/w/01d.png" alt="Weather icon"></div>
+                    <h5 class="dataLabel" id="forecastTemp2">Temperature: <p class="data" id="forecastTemp"></p> </h5>
+                    <h5 class="dataLabel" id="forecastHumidity2">Humidity: <p class="data" id="forecastHumidity"></p></h5>
+                </div>
+                <div class="forecastCard3" id="forecastCard3">
+                    <h4 id="forecastDate3"></h4>
+                    <div class="icon" id="forecastIcon3"><img class="weatherIcon" id="weatherIcon3" src="http://openweathermap.org/img/w/01d.png" alt="Weather icon"></div>
+                    <h5 class="dataLabel" id="forecastTemp3">Temperature: <p class="data" id="forecastTemp"></p> </h5>
+                    <h5 class="dataLabel" id="forecastHumidity3">Humidity: <p class="data" id="forecastHumidity"></p></h5>
+                </div>
+                <div class="forecastCard4" id="forecastCard4">
+                    <h4 id="forecastDate4"></h4>
+                    <div class="icon" id="forecastIcon4"><img class="weatherIcon" id="weatherIcon4" src="http://openweathermap.org/img/w/01d.png" alt="Weather icon"></div>
+                    <h5 class="dataLabel" id="forecastTemp4">Temperature: <p class="data" id="forecastTemp"></p> </h5>
+                    <h5 class="dataLabel" id="forecastHumidity4">Humidity: <p class="data" id="forecastHumidity"></p></h5>
+                </div>
+                <div class="forecastCard5" id="forecastCard5">
+                    <h4 id="forecastDate5"></h4>
+                    <div class="icon" id="forecastIcon5"><img class="weatherIcon" id="weatherIcon5" src="http://openweathermap.org/img/w/01d.png" alt="Weather icon"></div>
+                    <h5 class="dataLabel" id="forecastTemp5">Temperature: <p class="data" id="forecastTemp"></p> </h5>
+                    <h5 class="dataLabel" id="forecastHumidity5">Humidity: <p class="data" id="forecastHumidity"></p></h5>
+                </div>
             </div>
-            <div class="forecastCard">
-                <h4 id="forecastDate">1/11/1111</h4>
-                <h5 id="cardData" >Temperature:</h5>
-                <h5 id="cardData" >Humidity:</h5>
-            </div>
-            <div class="forecastCard">
-                <h4 id="forecastDate">1/11/1111</h4>
-                <h5 id="cardData" >Temperature:</h5>
-                <h5 id="cardData" >Humidity:</h5>
-            </div>
-            <div class="forecastCard">
-                <h4 id="forecastDate">1/11/1111</h4>
-                <h5 id="cardData" >Temperature:</h5>
-                <h5 id="cardData" >Humidity:</h5>
-            </div>
-            <div class="forecastCard">
-                <h4 id="forecastDate">1/11/1111</h4>
-                <h5 id="cardData">Temperature:</h5>
-                <h5 id="cardData">Humidity:</h5>
-            </div>
-        </div>
         </article>
-        </div>
     </div>
 
-
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="./assets/js/config.js"></script>
