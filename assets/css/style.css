@@ -216,7 +216,7 @@ button:hover {
 
 #forecastHeader {
     font-size: 25px;
-    margin: 0px 0 0 20px;
+    margin: 20px 0 0 20px;
     padding: 15px 0 0 0;
 }
 
@@ -227,16 +227,18 @@ button:hover {
 }
 
 .forecastCard {
-    height: 150px;
-    width: 150px;
+    height: 250px;
+    width: 200px;
     background-color: #2196F3;
     margin: 0;
+    border: 1px solid gray;
+    border-radius: 10px;
 }
 
-#forecastDate {
-    font-size: 25px;
-    font-weight: bold;
-    margin: 0;
+.forecastDate {
+    margin: 15px 0 0 15px;
+    color: white;
+    font-size: 24px;
 }
 
 #cardData {

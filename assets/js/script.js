@@ -128,13 +128,13 @@ function getForecast() {
 
             for(var i = 0; i < 5; i++) {
 
-                var futureDate = moment().add((i + 1), 'days').format("dddd, MMM Do");
+                var futureDate = moment().add((i + 1), 'days').format("ddd, MMM Do");
                 var temp =  ' ' + parseInt(((data.daily[i + 1].temp.day - 273.15) * (9/5) + 32)) + ' °F';
                 var humidity = ' ' + data.daily[i + 1].humidity + '%';
 
                 forecastDateArray[i].text(futureDate);
-                forecastTempArray[i].text('Temperature' + temp);
-                forecastHumidityArray[i].text('Humidity' + humidity);
+                forecastTempArray[i].text('Temperature: ' + temp);
+                forecastHumidityArray[i].text('Humidity: ' + humidity);
             }
             var iconKey1 = data.daily[1].weather[0].icon;
             var iconUrl1 = "http://openweathermap.org/img/w/" + iconKey1 + ".png";
@@ -240,14 +240,14 @@ searchForm.addEventListener("submit", function(event) {
         })
 });
 
-// Add a listener to the saved cities so that the user can remove cities from the list
+// Add a listener to the saved cities so that the user can fetch weather data for previously searched cities
 cityList.addEventListener("click", function(event) {
     var element = event.target;
     console.log(element);
     console.log("I was clicked");
 
     if (element.matches("button") === true) {
-        // Get index data of the saved city in order to remove the desired selection
+        // Get data on city name of the saved city in order to send a new data request
         var dataCity = element.getAttribute("data-city");
         console.log(dataCity);
         var requestUrl = 'http://api.openweathermap.org/geo/1.0/direct?q=' + dataCity + '&limit=1&appid=' + key;
