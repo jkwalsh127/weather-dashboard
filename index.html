@@ -23,13 +23,13 @@
 
     <div id="searchWrapper">
     <section id="searchSection">
-        <form id="searchForm">
-            <label for="citySearch" id="searchLabel">Search for a city:</label>
-            <div>
-            <input name="citySearch" id="searchInput" placeholder="Search for a city">
-            <button type="button" class="btn btn-outline-dark" id="searchBtn">Search</button>
-            </div>
-        </form>    
+        <form id="searchForm" method="post">
+            <label for="search-input" id="searchLabel">Search for a city:</label>
+            <input type="text" name="search-input" id="search-input" placeholder="Search for a city">
+            <!-- <button type="button" class="btn btn-outline-dark" id="searchBtn">Search</button> -->
+        </form>
+        <ul id="cityList"></ul>
+
     </section>
     <div id="contentWrapper">
 

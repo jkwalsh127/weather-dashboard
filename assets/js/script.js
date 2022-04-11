@@ -2,8 +2,8 @@ var key = config.OPEN_WEATHER_KEY;
 
 var currentDayContainter = document.getElementById('currentDayHeader');
 var cityNameHeader = document.getElementById('cityNameHeader');
-var searchInput = document.getElementById('searchInput');
-var searchBtn = document.getElementById('searchBtn');
+var searchInput = document.getElementById('search-input');
+var searchForm = document.getElementById('searchForm');
 // var todaysDate = $('#todaysDate');
 var currentTemp = $('#currentTemp');
 var currentHumidity = $('#currentHumidity');
@@ -47,38 +47,36 @@ var temp = '';
 var humidity = '';
 var windspeed = '';
 
-searchBtn.addEventListener("click", getGeoCoordinates);
-
 todaysDate = moment().format("dddd, MMM Do, YYYY");
 $('#todaysDate').text(todaysDate);
 
-function getGeoCoordinates() {
-    var userInput = searchInput.value;
-    // console.log(userInput);
+// function getGeoCoordinates() {
+//     var userInput = searchInput.value;
+//     // console.log(userInput);
 
-    // var cityName = localStorage.getItem("userInput");
-    var requestUrl = 'http://api.openweathermap.org/geo/1.0/direct?q=' + userInput + '&limit=1&appid=' + key;
-    // clear user input from input element
-    searchInput.value = null;
-    fetch(requestUrl)
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (data) {
-            // console.log(data);
-            // set variables to carry integer values
-            var lon = data[0].lon;
-            var lat = data[0].lat;
+//     // var cityName = localStorage.getItem("userInput");
+//     var requestUrl = 'http://api.openweathermap.org/geo/1.0/direct?q=' + userInput + '&limit=1&appid=' + key;
+//     // clear user input from input element
+//     searchInput.value = null;
+//     fetch(requestUrl)
+//         .then(function (response) {
+//             return response.json();
+//         })
+//         .then(function (data) {
+//             // console.log(data);
+//             // set variables to carry integer values
+//             var lon = data[0].lon;
+//             var lat = data[0].lat;
 
-            localStorage.setItem("lat", lat);
-            localStorage.setItem("lon", lon);
+//             localStorage.setItem("lat", lat);
+//             localStorage.setItem("lon", lon);
 
-            if (lat !== null) {
-                getWeather();
-                getForecast();
-            }
-    })
-};
+//             if (lat !== null) {
+//                 getWeather();
+//                 getForecast();
+//             }
+//         })
+// };
 
 function getWeather() {
 
@@ -155,7 +153,6 @@ function getForecast() {
             $('#weatherIcon5').attr('src', iconUrl5);
 
             uvIndex = data.current.uvi;
-            console.log(typeof uvIndex);
             if (uvIndex < 2.0) {
                 $('#uvColorCode').attr('class', 'uvColorCodeLow')
             } else if (2.0 < uvIndex < 7.0) {
@@ -166,3 +163,116 @@ function getForecast() {
             $('#currentUV').text(uvIndex);
         });
 };
+
+var cityList = document.getElementById("cityList");
+
+var cities = [];
+
+function renderCities() {
+    cityList.innerHTML = "";
+
+    for (var i = 0; i < cities.length; i++) {
+        var cityIndex = cities[i];
+        console.log(cities);    
+        console.log(typeof cities);
+        console.log(cityIndex);    
+        console.log(typeof cityIndex);
+
+        var li = document.createElement("button");
+        li.textContent = cityIndex;
+        li.setAttribute("data-city", cityIndex);
+        cityList.appendChild(li);
+    }
+}
+
+function init() {
+    var storedCities = JSON.parse(localStorage.getItem("cities"));
+    if (storedCities !== null) {
+        cities = storedCities;
+    }
+    renderCities();
+};
+
+function storeCities() {
+    localStorage.setItem("cities", JSON.stringify(cities));
+};
+
+// This event listener stores the city from the users input upon submission
+searchForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+    var cityText = searchInput.value.trim();
+    // If search input is empty, exit the function
+    if (cityText === "") {
+        return;
+    }
+    // Add new city to the cities array
+    cities.push(cityText);
+
+    // Store the list of cities along with the new submission in local storage and then render the updated list
+    storeCities();
+    renderCities();
+    var userInput = searchInput.value;
+    // console.log(userInput);
+
+    // var cityName = localStorage.getItem("userInput");
+    var requestUrl = 'http://api.openweathermap.org/geo/1.0/direct?q=' + userInput + '&limit=1&appid=' + key;
+    // clear user input from input element
+    searchInput.value = null;
+    fetch(requestUrl)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            // console.log(data);
+            // set variables to carry integer values
+            var lon = data[0].lon;
+            var lat = data[0].lat;
+
+            localStorage.setItem("lat", lat);
+            localStorage.setItem("lon", lon);
+
+            if (lat !== null) {
+                getWeather();
+                getForecast();
+            }
+            // Clear the search input
+            searchInput.value = "";
+        })
+});
+
+// Add a listener to the saved cities so that the user can remove cities from the list
+cityList.addEventListener("click", function(event) {
+    var element = event.target;
+    console.log(element);
+    console.log("I was clicked");
+
+    if (element.matches("button") === true) {
+        // Get index data of the saved city in order to remove the desired selection
+        var dataCity = element.getAttribute("data-city");
+        console.log(dataCity);
+        var requestUrl = 'http://api.openweathermap.org/geo/1.0/direct?q=' + dataCity + '&limit=1&appid=' + key;
+        fetch(requestUrl)
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                // console.log(data);
+                // set variables to carry integer values
+                var lon = data[0].lon;
+                var lat = data[0].lat;
+    
+                localStorage.setItem("lat", lat);
+                localStorage.setItem("lon", lon);
+    
+                if (lat !== null) {
+                    getWeather();
+                    getForecast();
+                }
+                // Clear the search input
+                searchInput.value = "";
+            })
+    }
+});
+
+// Calls function to retrieve data and render it to the page upon load
+init();
