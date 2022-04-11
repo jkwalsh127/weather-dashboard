@@ -92,14 +92,14 @@ header {
 #currentDayHeader {
     display: flex;
     align-items: center;
-    margin: 30px 0 0 20px;
+    margin: 0 0 0 10px;
     height: 53px;
 }
 
 #cityNameHeader {
     font-size: 25px;
     font-weight: bold;
-    margin: 0;
+    margin: 30px 0 0 10px;
 }
 
 #todaysDate {
@@ -121,11 +121,25 @@ header {
     display: inline-block;
 }
 
+#uvWrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+}
+
+.uvLabel {
+    font-size: 16px;
+    margin: 30px 0 0 10px;
+}
+
 #uvColorCode {
-    width: 80px;
+    margin: 30px 0 0 10px;
     height: 40px;
-    margin: 0 0 0 10px;
-    padding: 5px;
+    width: 60px;
+    margin: 19px 0 0 15px;
+    border: 1px solid rgb(165, 165, 165);
+    border-radius: 20px;
 }
 
 .uvColorCodeLow {
@@ -138,6 +152,10 @@ header {
 
 .uvColorCodeHigh {
     background-color: red;
+}
+
+#currentUV {
+    margin: 13px 0 0 17px;
 }
 
 /*  */

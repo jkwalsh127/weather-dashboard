@@ -33,8 +33,8 @@
     </section>
     <div id="contentWrapper">
 
+        <h3 id="cityNameHeader">City Name</h3>
         <div id="currentDayHeader">
-            <h3 id="cityNameHeader">City Name</h3>
             <h4 id="todaysDate"></h4>
             <div id="icon"><img id="weathericon" src="http://openweathermap.org/img/w/01d.png" alt="Weather icon"></div>
         </div>
@@ -42,9 +42,12 @@
         <h4 class="dataLabel">Temperature: <p class="data" id="currentTemp"></p></h4>
         <h4 class="dataLabel">Humidity: <p class="data" id="currentHumidity"></p></h4>
         <h4 class="dataLabel">Windspeed: <p class="data" id="currentWindspeed"></p></h4>
-        <div id="uvColorCode" class="">
-            <h4 class="uvLabel">UV Index: <p class="data" id="currentUV"></p></h4>
-        </div>
+        <section id="uvWrapper">
+            <h4 class="uvLabel">UV Index:</h4>
+            <div id="uvColorCode" class="">
+                <p class="data" id="currentUV"></p>
+            </div>
+        </section>
 
         <article id="forecastContainer">
             <h3 id="forecastHeader">5-Day Forecast</h3>
