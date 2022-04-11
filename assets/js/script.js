@@ -7,7 +7,6 @@ var currentDayContainter = document.getElementById('currentDayHeader');
 var cityNameHeader = document.getElementById('cityNameHeader');
 var searchInput = document.getElementById('search-input');
 var searchForm = document.getElementById('searchForm');
-// var todaysDate = $('#todaysDate');
 var currentTemp = $('#currentTemp');
 var currentHumidity = $('#currentHumidity');
 var currentWindspeed = $('#currentWindspeed');
@@ -40,10 +39,8 @@ var forecastHumidity3 = $('#forecastHumidity3');
 var forecastHumidity4 = $('#forecastHumidity4');
 var forecastHumidity5 = $('#forecastHumidity5');
 forecastDateArray = [forecastDate1, forecastDate2, forecastDate3, forecastDate4, forecastDate5];
-forecastIconArray = [forecastIcon1, forecastIcon2, forecastIcon3, forecastDate4, forecastIcon5];
 forecastTempArray = [forecastTemp1, forecastTemp2, forecastTemp3, forecastTemp4, forecastTemp5];
 forecastHumidityArray = [forecastHumidity1, forecastHumidity2, forecastHumidity3, forecastHumidity4, forecastHumidity5];
-forecastCardArray = [forecastCard1, forecastCard2, forecastCard3, forecastCard4, forecastCard5];
 
 var cityName = '';
 var temp = '';
@@ -53,33 +50,6 @@ var windspeed = '';
 todaysDate = moment().format("dddd, MMM Do, YYYY");
 $('#todaysDate').text(todaysDate);
 
-// function getGeoCoordinates() {
-//     var userInput = searchInput.value;
-//     // console.log(userInput);
-
-//     // var cityName = localStorage.getItem("userInput");
-//     var requestUrl = 'http://api.openweathermap.org/geo/1.0/direct?q=' + userInput + '&limit=1&appid=' + key;
-//     // clear user input from input element
-//     searchInput.value = null;
-//     fetch(requestUrl)
-//         .then(function (response) {
-//             return response.json();
-//         })
-//         .then(function (data) {
-//             // console.log(data);
-//             // set variables to carry integer values
-//             var lon = data[0].lon;
-//             var lat = data[0].lat;
-
-//             localStorage.setItem("lat", lat);
-//             localStorage.setItem("lon", lon);
-
-//             if (lat !== null) {
-//                 getWeather();
-//                 getForecast();
-//             }
-//         })
-// };
 
 function getWeather() {
 
