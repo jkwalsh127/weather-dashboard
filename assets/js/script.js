@@ -155,9 +155,9 @@ function getForecast() {
             uvIndex = data.current.uvi;
             if (uvIndex < 2.0) {
                 $('#uvColorCode').attr('class', 'uvColorCodeLow')
-            } else if (2.0 < uvIndex < 7.0) {
+            } else if (2.0 < uvIndex && uvIndex < 7.0) {
                 $('#uvColorCode').attr('class', 'uvColorCodeMod')
-            } else {
+            } else if (uvIndex > 7.0) {
                 $('#uvColorCode').attr('class', 'uvColorCodeHigh')
             }
             $('#currentUV').text(uvIndex);
