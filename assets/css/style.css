@@ -12,20 +12,6 @@ ul {
     padding: 0;
 }
 
-/* li {
-    margin: 5px 0 5px 10%;
-    padding: 10px 0;
-    background-color: white;
-    color: black;
-    font-size: 20px;
-    line-height: 1.5;
-    border: 1px solid black;
-    border-radius: 20px;
-    display: list-item;
-    text-align: center;
-    width: 80%;
-} */
-
 button {
     margin: 5px 0 5px 10%;
     padding: 10px 0;
@@ -202,7 +188,6 @@ button:hover {
 #currentUV {
     margin: 13px 0 0 17px;
 }
-
 /*  */
 /*  */
 /*  */

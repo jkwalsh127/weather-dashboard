@@ -13,7 +13,7 @@
     <title>Weather Dashboard</title>
 </head>
 <body>
-
+    <!-- Main header -->
     <header>
         <h1 id="main-header">
             Weather Dashboard
@@ -21,36 +21,39 @@
     </header>
 
     <div id="searchWrapper">
+    <!-- section to hold the search form along with the rendered list of saved searches -->
     <section id="searchSection">
         <form id="searchForm" method="post">
             <label for="search-input" id="searchLabel">Search for a city:</label>
             <input type="text" name="search-input" id="search-input" placeholder="Search for a city">
-            <!-- <button type="button" class="btn btn-outline-dark" id="searchBtn">Search</button> -->
         </form>
         <hr>
         <ul id="cityList"></ul>
 
     </section>
+    <!-- Wrap the current day and forecast content -->
     <div id="contentWrapper">
-
+        <!-- Heading for current conditions -->
         <h3 id="cityNameHeader">City Name</h3>
         <div id="currentDayHeader">
             <h4 id="todaysDate"></h4>
             <div id="icon"><img id="weathericon" src="https://openweathermap.org/img/w/01d.png" alt="Weather icon"></div>
         </div>
-        
+        <!-- Statistics for current conditions -->
         <h4 class="dataLabel">Temperature: <p class="data" id="currentTemp"></p></h4>
         <h4 class="dataLabel">Humidity: <p class="data" id="currentHumidity"></p></h4>
         <h4 class="dataLabel">Windspeed: <p class="data" id="currentWindspeed"></p></h4>
+        <!-- section to hold the UV index -->
         <section id="uvWrapper">
             <h4 class="uvLabel">UV Index:</h4>
             <div id="uvColorCode" class="">
                 <p class="data" id="currentUV"></p>
             </div>
         </section>
-
-        <article id="forecastContainer">
+        <!-- Section that contains the forecast information -->
+        <section id="forecastContainer">
             <h3 id="forecastHeader">5-Day Forecast:</h3>
+            <!-- Card divs to hold the forecast data for each day -->
             <div id="cardContainer">
                 <div class="forecastCard" id="forecastCard1">
                     <h4 id="forecastDate1" class="forecastDate">-</h4>
@@ -83,7 +86,7 @@
                     <h5 class="forecastDataLabel" id="forecastHumidity5">Humidity: <p class="data" id="forecastHumidity"></p></h5>
                 </div>
             </div>
-        </article>
+        </section>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
