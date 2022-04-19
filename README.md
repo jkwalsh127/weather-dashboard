@@ -36,6 +36,7 @@ This project is a web app that provides weather data for user-requested cities. 
 Just myself! Get in touch with me:
 
 email: jkwalsh127@gmail.com
+
 linkedIn: https://www.linkedin.com/in/jake--walsh/
 
 #### Credits
