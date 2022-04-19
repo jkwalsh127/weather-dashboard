@@ -1,7 +1,5 @@
 # Weather Dashboard
 
----
-
 |   Languages/Libraries/APIs   | Used |
 | ----------- | ----------- |
 | HTML     |    ✅    |
@@ -10,6 +8,10 @@
 | jQuery  |    ✅    |
 | Moment.js  |    ✅    |
 | OpenWeatherMap  |    ✅    |
+
+## Usage
+
+Click <a href="https://jkwalsh127.github.io/weather-dashboard/" target="_blank">**here**</a> to check out the deployed weather app!
 
 ## Description
 
@@ -26,20 +28,39 @@ This project is a web app that provides weather data for user-requested cities. 
 7. Add inputs into an array that is stored locally
 8. Render the list of stored cities upon new searches as well as page reloads
 
-
----
-
 ### App demonstration
 ![gif demonstration of the app](./assets/images/weather-dashboard-readme-gif.gif)
 
----
+### Collaborators
 
-#### Usage
+Just myself! Get in touch with me:
 
-Click <a href="https://jkwalsh127.github.io/weather-dashboard/" target="_blank">**here**</a> to check out the deployed weather app!
-
+email: jkwalsh127@gmail.com
+linkedIn: https://www.linkedin.com/in/jake--walsh/
 
 #### Credits
 
 Staff at UC Berkeley Extension full-stack coding bootcamp
 
+#### Liscense 
+
+MIT
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
