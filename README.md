@@ -39,6 +39,8 @@ email: jkwalsh127@gmail.com
 
 linkedIn: https://www.linkedin.com/in/jake--walsh/
 
+my portfolio page: https://jkwalsh127.github.io/my-portfolio-page/
+
 #### Credits
 
 Staff at UC Berkeley Extension full-stack coding bootcamp
